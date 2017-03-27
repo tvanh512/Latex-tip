@@ -1,0 +1,13 @@
+\begin{lstlisting}
+$import music21 
+from music21 import * 
+song = corpus.parse("bwv66.6") 
+melody = song.parts[0] 
+# return the tonic of the Key Signature
+tonic = str(song.analyze('key'))[:2] 
+p = melody.flat.getElementsByClass(note.Note)
+for n in p: 
+    print n.midi % 12  
+#distance from a note to C, need to convert to 
+# distance to the tonic of Key Signature
+\end{lstlisting}
