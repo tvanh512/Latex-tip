@@ -1,0 +1,16 @@
+https://www.sharelatex.com/learn/Commands#Defining_a_new_command
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+The set of real numbers are usually represented 
+by a blackboard bold capital r: $\R$
+\end{document}
+
+The statement \newcommand{\R}{\mathbb{R}} has two parameters that define a new command
+
+\R 
+This is the name of the new command.
+\mathbb{R} 
+This is what the new command does. In this case the letter R will be written in blackboard boldface style. (to use mathbb is needed the package amssymb)
