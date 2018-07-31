@@ -14,3 +14,49 @@ The statement \newcommand{\R}{\mathbb{R}} has two parameters that define a new c
 This is the name of the new command.
 \mathbb{R} 
 This is what the new command does. In this case the letter R will be written in blackboard boldface style. (to use mathbb is needed the package amssymb)
+
+2. Commands with parameters
+It is also possible to create new commands that accept some parameters.
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+ 
+Other numerical systems have similar notations. 
+The complex numbers \( \bb{C} \), the rational 
+numbers \( \bb{Q} \) and the integer numbers \( \bb{Z} \).
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+ 
+Other numerical systems have similar notations. 
+The complex numbers \( \bb{C} \), the rational 
+numbers \( \bb{Q} \) and the integer numbers \( \bb{Z} \).
+
+This is what the command actually does. In this case the parameter, referenced as #1, 
+will be written using blackboard boldface characters. If the defined new command needs more than one parameter,
+you can refer each parameter by #1, #2 and so on.
+
+Commands with optional parameters
+User-defined commands are even more flexible than the examples shown above. 
+You can define commands that take optional parameters:
+\newcommand{\plusbinomial}[3][2]{(#2 + #3)^#1}
+ 
+To save some time when writing too many expressions 
+with exponents is by defining a new command to make simpler:
+ 
+\[ \plusbinomial{x}{y} \]
+ 
+And even the exponent can be changed
+ 
+\[ \plusbinomial[4]{y}{y} \]
+
+Let's analyse the syntax of the line \newcommand{\plusbinomial}[3][2]{(#2 + #3)^#1}:
+
+\plusbinomial
+This is the name of the new command.
+[3]
+The number of parameters the command will take, in this case 3.
+[2]
+Is the default value for the first parameter. This is what makes the first parameter optional,
+if not passed it will use this default value.
+(#2 + #3)^#1
+This is what the command does. In this case it will put the second and third parameters in a
+"binomial format" to the power represented by the first parameter.
